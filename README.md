@@ -146,7 +146,21 @@ visualize_boundary(dt_clf,X_features,y_labels)
 - 단순/가중 평균(voting)<br>
 : linear regression ,k nearest Meighbor , support vector meachine 중 가장괜찮은 모델 사용<br>
 - 배깅(bagging)=randomforest<br>
-: 
 - 부스팅(boosting)<br>
 - 스택킹(stacking) : 넷플릭스에서 개발함<br>
 - 메타학습(meta-learning)<br>
+
+## Random Forest
+- 앙상블 알고리즘
+- 비교적 빠른 수행 속도
+- 다양한 영역 높은 예측 성능
+- 결정 트리 기반
+
+## Hard voting (다수결)
+## sotf voting ( 자주 사용)
+
+# voting , FandomForest ,KNN 정확도 비교 해보자
+
+
+
+
