@@ -1,4 +1,5 @@
 # iris_model
+iris 데이터 호출 후 decisiontree에 학습시켜줌
 ```py
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
@@ -13,17 +14,14 @@ df_clf.fit(x_train,y_train)
 pred=df_clf.predict(x_test)
 accuracy_score(y_test,pred)
 ```
-
+# 트리 불러오기
 ```py
 from sklearn.tree import export_graphviz
-```
-
-```py
 export_graphviz(df_clf,out_file='iris_tree.dot',max_depth=None,feature_names=iris_data.feature_names,class_names=iris_data.target_names,label='all')
 ```
 
 ```py
- # export_graphviz()의 호출 결과로 out_file로 지정된 tree.dot 파일을 생성함. 
+# export_graphviz()의 호출 결과로 out_file로 지정된 tree.dot 파일을 생성함. 
 #파라미터 조정해보기
 export_graphviz(df_clf, out_file="tree.dot", class_names=iris_data.target_names,feature_names = iris_data.feature_names, impurity=True, filled=True)
 import graphviz
@@ -32,6 +30,7 @@ with open("iris_tree.dot") as f:
     dot_graph = f.read()
 graphviz.Source(dot_graph)
 ```
+
 
 ```py
 import seaborn as sns
@@ -75,7 +74,7 @@ import matplotlib.pyplot as plt
 plt.title("3 Class values with 2 Features Sample data creation")
 
 # 2차원 시각화를 위해서 피처는 2개, 클래스는 3가지 유형의 분류 샘플 데이터 생성.
-#make_classification 데이터를 임의로 만듬
+# make_classification 데이터를 임의로 만듬
 #feature 2 , calss가 3인 데이털르 임의로 만듬,출력 3개(n_class)
 X_features, y_labels = make_classification(n_features=2, n_redundant=0, n_informative=2, n_classes=3, n_clusters_per_class=1, random_state=0)
 
